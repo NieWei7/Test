@@ -18,8 +18,17 @@ namespace EFTest.Controllers
 
         public IActionResult Index()
         {
-            var list = _context.UserInfo.ToList();
-            return View(list);
+            var add = _context.UserInfo.Add(new UserInfo
+                { UserLoginName = "tc", PassWord = "123X", Age = 17, Sex = "女", UserName = "tiancai" });
+            _context.SaveChanges();
+            
+
+            //var list = _context.UserInfo.ToList();
+            var db = _context.UserInfo.Find(3);
+            //var table = _context.UserInfo.FirstOrDefault(x => x.Id == 2);
+            //ViewBag.a = db;
+            //ViewBag.b = table;
+            return View(db);
         }
     }
 }

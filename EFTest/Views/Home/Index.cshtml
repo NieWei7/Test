@@ -1,4 +1,5 @@
-﻿@model IEnumerable<EFTest.Models.UserInfo>
+﻿@*@model IEnumerable<EFTest.Models.UserInfo>*@
+@model EFTest.Models.UserInfo
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -94,14 +95,17 @@
     </div>
     <div>
         <ul>
-            @foreach (var item in Model)
-            {
-                <li>@item.Id</li>
-                <li>@item.UserLoginName</li>
-                <li>@item.UserName</li>
-                <li>@item.Sex</li>
-                <li>@item.Age</li>
-            }
+            @Model.Id&nbsp;@Model.UserLoginName&nbsp;@Model.UserName&nbsp;@Model.Sex&nbsp;@Model.Age
+            @*@ViewBag.a.Id&nbsp;@ViewBag.a.UserLoginName&nbsp;@ViewBag.a.UserName&nbsp;@ViewBag.a.Sex&nbsp;@ViewBag.a.Age*@
+            @*@model.Id*@
+            @*@foreach (var item in Model)
+                {
+                    <li>@item.Id</li>
+                    <li>@item.UserLoginName</li>
+                    <li>@item.UserName</li>
+                    <li>@item.Sex</li>
+                    <li>@item.Age</li>
+                }*@
         </ul>
     </div>
 </div>
